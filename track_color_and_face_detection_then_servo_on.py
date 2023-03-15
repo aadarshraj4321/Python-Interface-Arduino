@@ -12,7 +12,7 @@ motorWheel = 10
 
 
 ## Face Detection Haarcascade
-faceCascade = cv2.CascadeClassifier("haarcascade/haarcascade_frontalface_default.xml")
+faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 # Start a while loop
 while True:
@@ -128,6 +128,7 @@ while True:
         if(area > 300):
             for face in allFaces:
                 if(x is not None and y is not None and w is not None and h is not None):
+                    cv2.rectangle(imageFrame, ())
                     x, y, w, h = cv2.boundingRect(contour)
                     imageFrame = cv2.rectangle(imageFrame, (x, y),(x + w, y + h),(0, 0, 255), 2)    
                     cv2.putText(imageFrame, "Red Colour", (x, y),cv2.FONT_HERSHEY_SIMPLEX, 1.0,(0, 0, 255))
